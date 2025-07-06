@@ -19,7 +19,7 @@ minecraft {
 
 repositories {
     maven { url = "https://maven.minecraftforge.net" }
-    maven { url = "https://libraries.minecraft.net" }  // ✅ ADD THIS
+    maven { url = "https://libraries.minecraft.net" }  
     mavenCentral()
 }
 
