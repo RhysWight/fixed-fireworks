@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.4-47.2.1'
+    minecraft 'net.minecraftforge:forge:1.20.4-47.2.0'
 }
 
 jar {
