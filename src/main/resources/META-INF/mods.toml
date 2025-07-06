@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="fireworkshow"
+version="1.0.0"
+displayName="Firework Show"
+authors="Your Name"
+description='''
+Adds a placeable firework launcher block and colourful 4‑July style fireworks.
+'''
+
+[[dependencies.fireworkshow]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.fireworkshow]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.4]"
+    ordering="NONE"
+    side="BOTH"

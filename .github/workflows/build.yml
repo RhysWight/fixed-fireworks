@@ -1,0 +1,36 @@
+name: Build Firework Mod
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Gradle cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      - name: Build with Gradle
+        run: ./gradlew build --no-daemon
+
+      - name: Upload built mod
+        uses: actions/upload-artifact@v4
+        with:
+          name: fireworkshow-jar
+          path: build/libs/fireworkshow-*.jar

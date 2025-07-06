@@ -1,0 +1,42 @@
+plugins {
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '6.+'
+}
+
+group = 'com.example.fireworkshow'
+version = '1.0.0'
+archivesBaseName = 'fireworkshow'
+
+minecraft {
+    mappings channel: 'official', version: '1.20.4'
+    copyIdeResources = true
+    runs {
+        client { workingDirectory project.file('run') }
+        server { workingDirectory project.file('run') }
+    }
+}
+
+repositories {
+    maven { url = "https://maven.minecraftforge.net" }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.4-47.2.1'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Specification-Title': 'Firework Show',
+            'Specification-Vendor': 'You',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': version,
+            'Implementation-Vendor': 'You',
+            'ModSide': 'CLIENT'
+        )
+    }
+}
+
